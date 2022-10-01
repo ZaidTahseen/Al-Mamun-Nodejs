@@ -1,0 +1,19 @@
+<script>
+
+
+function userInfo() {
+    setTimeout(() => {
+      return { id: 1, name: "John" };
+    }, 1000);
+}
+
+let user = userInfo();  // undefined
+
+setTimeout(() => {
+    console.log(user);
+}, 2000);
+
+console.log('Hi there');
+// setTimeout [  console.log(user) ,   user = undefined  ]
+
+</script>

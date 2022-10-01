@@ -1,0 +1,11 @@
+Event-Queue = [ req1(0sec) , req2(2sec-flie) , req3-db-reading(2sec) , req4(5sec-file) , req5(0sec-db-reading)]
+
+Event Loop-(Single_Thread ) = 
+    [ 
+        
+    ]
+
+
+Callback / Waiting Queue = [ req2(2sec-flie) , req3-db-reading(2sec) ] 
+
+Response = [ req1(0sec) ,req5(0sec) ,req2(2sec-flie)-done ,req3(2sec)-database-reading-done ,req4(5sec)-done  ]
