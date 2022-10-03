@@ -1,0 +1,12 @@
+1 - npm is by default installed
+2 - node -v , npm -v
+3 - npm init ( fill the form) , npm inti --yes
+4 - always open terminal on package.json file
+5 - package.json remember the used packages 
+6 - Never share node_modules (large memory)
+7 - How to install packages ( npm i express ,  npm i express@3.0.1 )
+8 - We require three things ( 
+    core-node packages like , http , crypto 
+    installed packages from node_modules , like express etc 
+    file.js  etc 
+    )

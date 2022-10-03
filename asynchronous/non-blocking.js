@@ -1,15 +1,54 @@
-function userInfo() {
+// 1 - Callback
+
+// make as a callback
+function userInfoFromDb(id, callback) {
+  const userData = [
+    { id: 1, name: "John", city: "America" },
+    { id: 2, name: "Max", city: "America" },
+    { id: 3, name: "Raju", city: "America" },
+  ];
+
   setTimeout(() => {
-    return { id: 1, name: "John" };
-  }, 3000);
+    userData.forEach((user) => {
+      if (user.id == id) {
+        callback({ ...user });
+      }
+    });
+  }, 2000);
 }
 
-const user = userInfo(); // { id: 1, name: "John" } // undefined
+function userMoneyDetail(id, name, callback) {
+  const userMoney = [
+    { id: 1, name: "John", money: 20000 },
+    { id: 2, name: "Max", money: 40000 },
+    { id: 3, name: "Raju", money: 40000 },
+  ];
 
-console.log("Fetching User Info");
-console.log(user); // undefined 
-console.log("Fetching User Info Completed");
+  setTimeout(() => {
+    userMoney.forEach((user) => {
+      if (user.id == id && user.name == name) {
+        callback({ ...user });
+      }
+    });
+  }, 2000);
+}
+
+function sendEmail(name, callback) {
+  setTimeout(() => {
+    console.log("Send Email to ", name);
+  }, 2000);
+}
 
 
-// 3 ways -->
-// Promises , callback and asyn-await 
+
+// callbacnk hell  , function () {}  , () =>{ }
+userInfoFromDb(2, function (data) {
+  console.log("Fetch User Info " , data);
+
+  // userMoneyDetail(data.id, data.name, function (money) {
+  //   console.log(money);
+
+  //   sendEmail(money.name, function () {});
+  // });
+
+});
