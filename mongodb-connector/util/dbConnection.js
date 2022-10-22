@@ -1,21 +1,28 @@
-const mongodb = require("mongodb");
-const MongoClient = mongodb.MongoClient;
+// const mongodb = require("mongodb");
+// const MongoClient = mongodb.MongoClient;
+
+const { MongoClient } = require('mongodb');
 
 let database;
 
-const db_uri = "mongodb://localhost:27016";
+const db_uri = "mongodb://localhost:27017/al-mamun";
 
 const mongoConnect = (callback) => {
   MongoClient.connect(db_uri)
     .then((client) => {
-      console.log("Mongodb Connected !!! ");
       database = client.db();
       callback(client , null );
     })
     .catch((err) => {
-      console.log("Mongodb Not Connected !!! ");
       callback(null, err);
     });
 };
 
-module.exports = mongoConnect;
+const getDb = function(){
+  if (database) return database ;
+  throw 'No Database Found '
+}
+
+exports.mongoConnect = mongoConnect ;
+exports.getDb = getDb ;
+
