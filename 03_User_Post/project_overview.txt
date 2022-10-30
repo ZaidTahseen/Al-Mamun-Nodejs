@@ -1,0 +1,23 @@
+    Users:
+        Create Register User API
+        Login API
+        Get Users API
+            If authorized then all information of all users
+            If not, then only limited information of all users
+            If specific id or ids are given, then only information of those users
+            Optional paging
+            Optional sorting
+    Posts:
+        Create/Update Post API (Common endpoint, if post exist then update else create) (protected route)
+        Get Post by User API (protected route) (should include total likes, dis-likes, recently liked & disliked top 5 users with their basic information)
+            Optional filter for likes, dislikes, title, content, created_at, updated_at
+            Optional paging
+            Optional sorting
+        API to like/dislike post (protected route)
+        API to get top 10/50 liked/disliked posts (protected route)
+            Optional filter to get it for specific user
+
+
+
+
+MVC ( Model , View/Router , Controller )
