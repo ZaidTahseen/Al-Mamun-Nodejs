@@ -12,4 +12,14 @@ function validateUser(userObject) {
   return userSchema.validate(userObject);
 }
 
-module.exports = validateUser;
+
+function userLoginvalidation(user){
+  const userLogin = Joi.object({
+    email: Joi.string().email().required(),
+    password: Joi.string().min(8).max(20).required(),
+  });
+  return userLogin.validate(user);
+}
+
+module.exports.validateUser = validateUser;
+module.exports.userLoginvalidation = userLoginvalidation;

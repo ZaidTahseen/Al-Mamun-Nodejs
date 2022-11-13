@@ -2,11 +2,15 @@
         Create Register User API
         Login API
         Get Users API
-            If authorized then all information of all users
-            If not, then only limited information of all users
-            If specific id or ids are given, then only information of those users
+            
+            If authorized then only all information of all users otherwise no-info-of-the-users
             Optional paging
             Optional sorting
+            
+            
+            If specific id or ids are given, then only information of those users
+            
+
     Posts:
         Create/Update Post API (Common endpoint, if post exist then update else create) (protected route)
         Get Post by User API (protected route) (should include total likes, dis-likes, recently liked & disliked top 5 users with their basic information)
