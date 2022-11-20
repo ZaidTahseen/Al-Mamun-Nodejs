@@ -1,6 +1,6 @@
 const Joi = require("joi");
 
-function validateUser(userObject) {
+function validateUser(user) {
   const userSchema = Joi.object({
     name: Joi.string().required(),
     email: Joi.string().email().required(),
@@ -9,7 +9,7 @@ function validateUser(userObject) {
     city: Joi.string().min(3).required(),
   });
 
-  return userSchema.validate(userObject);
+  return userSchema.validate(user);
 }
 
 
@@ -21,5 +21,14 @@ function userLoginvalidation(user){
   return userLogin.validate(user);
 }
 
+function editUserProfile(user){
+  const userProfile = Joi.object({
+    email: Joi.string().email().required(),
+    mobile: Joi.number().min(10).required(),
+  });
+  return userProfile.validate(user);
+}
+
 module.exports.validateUser = validateUser;
 module.exports.userLoginvalidation = userLoginvalidation;
+module.exports.editUserProfile = editUserProfile;

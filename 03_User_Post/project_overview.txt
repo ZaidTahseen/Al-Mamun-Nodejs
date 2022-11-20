@@ -12,7 +12,9 @@
             
 
     Posts:
-        Create/Update Post API (Common endpoint, if post exist then update else create) (protected route)
+        Create Post API --- (protected route)
+        Update Post API --- Only the same loggedIn user can update its post.
+        
         Get Post by User API (protected route) (should include total likes, dis-likes, recently liked & disliked top 5 users with their basic information)
             Optional filter for likes, dislikes, title, content, created_at, updated_at
             Optional paging

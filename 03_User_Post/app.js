@@ -19,9 +19,11 @@ app.listen(process.env.PORT, () => {
 });
 
 const userRouter = require("./router/userRouter");
+const postRouter = require("./router/postRouter");
 
 app.use( express.json()) ;
 app.use("/api/user", userRouter);
+app.use("/api/post", postRouter);
 
 app.use("*", function (req, res) {
   res.status(400).json({ message: "Incorrect Route" });
